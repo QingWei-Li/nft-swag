@@ -12,9 +12,10 @@ export const Page: React.FC<any> = ({ children }) => {
       </Head>
       <Container
         maxW="container.xl"
-        minH="100vh"
+        h="100vh"
         display="flex"
         flexDirection="column"
+        overflow="hidden"
       >
         <Header />
         {children}

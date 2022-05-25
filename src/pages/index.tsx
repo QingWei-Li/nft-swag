@@ -13,6 +13,7 @@ const Home: NextPage = () => {
         base: 'column',
         md: 'row'
       }}
+      overflow="hidden"
     >
       <Box w={['50%', '100%']} as="section">
         <Selector />

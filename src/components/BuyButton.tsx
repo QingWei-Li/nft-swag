@@ -7,7 +7,8 @@ import {
   ModalOverlay,
   useDisclosure,
   useClipboard,
-  Center
+  Center,
+  useMediaQuery
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -18,6 +19,8 @@ export const BuyButton = () => {
   const router = useRouter();
   const [url, setUrl] = React.useState('');
   const { hasCopied, onCopy } = useClipboard(url);
+
+  const [isDesktop] = useMediaQuery('(min-width: 960px)');
 
   React.useEffect(() => {
     setUrl(location.href);
@@ -37,7 +40,11 @@ export const BuyButton = () => {
               <Button mt="2" colorScheme="yellow">
                 <Link
                   target="_blank"
-                  href="https://m.tb.cn/h.ftXu5bo?tk=3zRj2lglOa6"
+                  href={
+                    isDesktop
+                      ? 'https://m.tb.cn/h.ftXu5bo?tk=3zRj2lglOa6'
+                      : 'fleamarket://item?id=675720307064'
+                  }
                 >
                   闲鱼下单
                 </Link>

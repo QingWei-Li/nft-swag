@@ -9,6 +9,16 @@ const imageKitLoader = ({
   width: number;
   quality?: number;
 }) => {
+  // whitelist
+
+  if (
+    ['https://lh3.googleusercontent.com', 'https://img.seadn.io/'].filter(
+      (prefix) => src.startsWith(prefix)
+    ).length
+  ) {
+    return src;
+  }
+
   if (src[0] === '/') {
     src = src.slice(1);
   }

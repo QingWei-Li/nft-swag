@@ -53,8 +53,8 @@ export const Selector = () => {
     // update query params
     router.replace({
       query: {
-        address: swag?.nft?.contract.address,
-        token: swag?.nft?.id.tokenId,
+        address: swag?.nft?.asset_contract.address,
+        token: swag?.nft?.token_id,
         product: swag?.product?.id,
         style: swag?.productStyle?.id
       }

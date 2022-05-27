@@ -1,15 +1,15 @@
 import useSWR from 'swr';
+import { apiProxy } from '../proxy';
+import { fetcher } from './fetcher';
 import { Nft } from './types';
-import { useFetcher } from './useFetcher';
 
 interface GetNftsResponse {
-  ownedNfts: Nft[];
+  assets: Nft[];
 }
 
 export const useNfts = (address: string) => {
-  const { fetcher } = useFetcher();
   const { data, error } = useSWR<GetNftsResponse>(
-    `/getNFTs?owner=${address}&withMetadata=false`,
+    `https://api.opensea.io/api/v1/assets?owner=${address}`,
     fetcher
   );
 

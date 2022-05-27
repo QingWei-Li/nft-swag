@@ -30,12 +30,12 @@ const Inner: React.FC<{
     return <Loading />;
   }
 
-  const selectedId = `${swag?.nft?.contract.address}${swag?.nft?.id.tokenId}`;
+  const selectedId = `${swag?.nft?.asset_contract.address}${swag?.nft?.token_id}`;
 
   return (
     <CardGrid>
-      {nfts.data.ownedNfts.map((nft) => {
-        const key = `${nft.contract.address}${nft.id.tokenId}`;
+      {nfts.data.assets.map((nft) => {
+        const key = `${nft.asset_contract.address}${nft.token_id}`;
 
         return (
           <GridItem key={key}>

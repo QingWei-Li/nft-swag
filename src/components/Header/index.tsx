@@ -5,7 +5,9 @@ export const Header = () => {
   return (
     <Flex py="2" alignItems="center" as="header">
       <Box>
-        <Heading fontSize="2xl">NFT Swag</Heading>
+        <Heading fontFamily="monospace" fontSize="2xl">
+          NFT Swag
+        </Heading>
       </Box>
       <Spacer />
       <ButtonGroup>

@@ -21,7 +21,7 @@ export const Preview = () => {
         </Box>
         {uri && <Image src={uri} alt="white" width="600" height="600" />}
       </Center>
-      <Center mb="10">
+      <Center mb={['2', '10']}>
         <BuyButton />
       </Center>
     </Flex>

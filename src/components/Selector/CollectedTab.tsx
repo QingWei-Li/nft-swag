@@ -24,7 +24,7 @@ const Inner: React.FC<{
   address: string;
 }> = ({ address }) => {
   const { setSwag, swag } = useSwag();
-  const nfts = useNfts(address);
+  const nfts = useNfts('0xE36bC99a803AD3E096B4Dc8FDE747d739efc593f');
 
   if (!nfts.data) {
     return <Loading />;

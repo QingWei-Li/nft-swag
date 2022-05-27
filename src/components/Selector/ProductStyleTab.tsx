@@ -1,6 +1,5 @@
 import { GridItem } from '@chakra-ui/react';
 import React from 'react';
-import { useProducts } from '../../utils/states/useProducts';
 import { useSwag } from '../../utils/states/useSwag';
 import { CardGrid } from '../CardGrid';
 import { CardItem } from '../CardItem';

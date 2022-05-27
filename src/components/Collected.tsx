@@ -1,24 +1,19 @@
 import { Box } from '@chakra-ui/react';
+import React from 'react';
 import { Nft } from '../utils/apis/types';
-import { Image } from './Image';
+import { NftImage } from './NftImage';
+import { useInView } from 'react-intersection-observer';
+import { CardItem, CardItemProps } from './CardItem';
 
-export const Collected: React.FC<Nft> = ({ media, title }) => {
-  const uri = media?.[0]?.gateway;
+export const Collected: React.FC<CardItemProps & { nft: Nft }> = ({
+  nft,
+  ...rest
+}) => {
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
-    <Box
-      borderRadius="md"
-      overflow="hidden"
-      cursor="pointer"
-      _hover={{
-        shadow: 'xl',
-        transition: 'all 0.2s'
-      }}
-      bg="gray.100"
-    >
-      {uri && (
-        <Image src={uri} alt={title} objectFit="contain" layout="responsive" />
-      )}
-    </Box>
+    <CardItem ref={ref} {...rest}>
+      {inView ? <NftImage nft={nft} objectFit="contain" /> : <Box pb="100%" />}
+    </CardItem>
   );
 };

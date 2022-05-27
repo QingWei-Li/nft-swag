@@ -6,25 +6,21 @@ import { CardGrid } from '../CardGrid';
 import { CardItem } from '../CardItem';
 import { Image } from '../Image';
 
-export const ProductTab = () => {
-  const { products } = useProducts();
+export const ProductStyleTab = () => {
   const { swag, setSwag } = useSwag();
 
   return (
     <CardGrid>
-      {products?.map((product) => (
-        <GridItem key={product.id}>
+      {swag?.product?.styles.map((style) => (
+        <GridItem key={style.id}>
           <CardItem
             onClick={() => {
-              setSwag({ product });
+              setSwag({ productStyle: style });
             }}
-            selected={product.id === swag?.product?.id}
+            selected={style.id === swag?.productStyle?.id}
             position="relative"
           >
-            <Image src={product.styles[0].uri[0]} alt={product.name} />
-            {/* <Center position="absolute" left="0" right="0" bottom="4">
-              <Text>{product.name}</Text>
-            </Center> */}
+            <Image src={style.uri[0]} alt={style.name} />
           </CardItem>
         </GridItem>
       ))}

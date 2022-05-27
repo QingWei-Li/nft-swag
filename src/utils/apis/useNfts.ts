@@ -9,7 +9,7 @@ interface GetNftsResponse {
 export const useNfts = (address: string) => {
   const { fetcher } = useFetcher();
   const { data, error } = useSWR<GetNftsResponse>(
-    `/getNFTs?owner=${address}`,
+    `/getNFTs?owner=${address}&withMetadata=false`,
     fetcher
   );
 

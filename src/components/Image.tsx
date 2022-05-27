@@ -28,6 +28,12 @@ const imageKitLoader = ({
 
 export const Image: React.FC<ImageProps> = (props) => {
   return (
-    <NextImage loader={imageKitLoader} width={400} height={400} {...props} />
+    <NextImage
+      loader={imageKitLoader}
+      width={400}
+      height={400}
+      onError={(e) => (e.currentTarget.src = props.src as string)}
+      {...props}
+    />
   );
 };

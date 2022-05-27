@@ -24,7 +24,8 @@ export const useFetcher = () => {
 
   return {
     setChain,
-    fetcher
+    fetcher,
+    chain
   };
 };
 

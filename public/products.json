@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "name": "重磅落肩 T 恤",
+    "price": "199",
+    "styles": [
+      {
+        "id": 100,
+        "name": "白色",
+        "uri": ["72_white_1.png"]
+      },
+      {
+        "id": 101,
+        "name": "灰色",
+        "uri": ["72_gray_1.png"]
+      },
+      {
+        "id": 102,
+        "name": "暗粉色",
+        "uri": ["72_pink_1.png"]
+      },
+      {
+        "id": 103,
+        "name": "蓝色",
+        "uri": ["72_blue_1.png"]
+      },
+      {
+        "id": 104,
+        "name": "浅绿色",
+        "uri": ["72_green_1.png"]
+      },
+      {
+        "id": 105,
+        "name": "卡其色",
+        "uri": ["72_khaki_1.png"]
+      },
+      {
+        "id": 106,
+        "name": "酒红色",
+        "uri": ["72_wine_1.png"]
+      },
+      {
+        "id": 107,
+        "name": "姜黄色",
+        "uri": ["72_yellow_1.png"]
+      },
+      {
+        "id": 108,
+        "name": "湖绿色",
+        "uri": ["72_lake_1.png"]
+      },
+      {
+        "id": 109,
+        "name": "褐色",
+        "uri": ["72_brown_1.png"]
+      },
+      {
+        "id": 110,
+        "name": "玄武红",
+        "uri": ["72_bigred_1.png"]
+      }
+    ]
+  }
+]

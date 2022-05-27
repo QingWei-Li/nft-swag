@@ -18,10 +18,10 @@ const Home: NextPage = () => {
       overflow="hidden"
     >
       <SwagStateProvider>
-        <Box w={'100%'} as="section">
+        <Box w="100%" as="section" h={['50%', 'auto']}>
           <Preview />
         </Box>
-        <Box w={'100%'} as="section">
+        <Box w="100%" as="section" h={['50%', 'auto']} overflow="hidden">
           <ProductsStateProvider>
             <Selector />
           </ProductsStateProvider>

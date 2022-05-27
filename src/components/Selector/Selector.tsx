@@ -63,7 +63,7 @@ export const Selector = () => {
   }, [swag]);
 
   return (
-    <Box bg="yellow.200" borderTopRadius="3xl" p="2" h="full">
+    <Box borderTopRadius="3xl" p="2" h="full">
       <Tabs
         variant="soft-rounded"
         h="full"

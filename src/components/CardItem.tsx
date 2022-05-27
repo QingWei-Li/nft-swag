@@ -13,16 +13,13 @@ export const CardItem = React.forwardRef<HTMLDivElement, CardItemProps>(
         borderRadius="md"
         overflow="hidden"
         cursor="pointer"
-        _hover={{
-          borderColor: 'yellow.500'
-        }}
-        _active={{
-          borderColor: 'yellow.700'
-        }}
-        border="4px"
         transition="all 0.2s"
+        _hover={{
+          boxShadow: '2xl',
+          transform: 'scale(1.05)'
+        }}
+        boxShadow="lg"
         bg="yellow.50"
-        borderColor={selected ? 'yellow.500' : 'black'}
         className="image-wrapper"
         {...props}
       />

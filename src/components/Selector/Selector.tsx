@@ -7,7 +7,6 @@ import { useSwag } from '../../utils/states/useSwag';
 import React from 'react';
 import { useProducts } from '../../utils/states/useProducts';
 import { RemoveBackgroundTab } from './RemoveBackgroundTab';
-import { useRouter } from 'next/router';
 
 const TAB_LIST = [
   {
@@ -36,7 +35,6 @@ const TAB_LIST = [
 export const Selector = () => {
   const { products } = useProducts();
   const { setSwag, swag } = useSwag();
-  const router = useRouter();
 
   React.useEffect(() => {
     if (products) {
@@ -48,19 +46,6 @@ export const Selector = () => {
       });
     }
   }, [products, setSwag]);
-
-  React.useEffect(() => {
-    // update query params
-    router.replace({
-      query: {
-        address: swag?.nft?.asset_contract.address,
-        token: swag?.nft?.token_id,
-        product: swag?.product?.id,
-        style: swag?.productStyle?.id
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [swag]);
 
   return (
     <Box borderTopRadius="3xl" p="2" h="full">

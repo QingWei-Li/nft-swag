@@ -13,18 +13,32 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { useSwag } from '../utils/states/useSwag';
 
 export const BuyButton = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const [url, setUrl] = React.useState('');
   const { hasCopied, onCopy } = useClipboard(url);
+  const { swag } = useSwag();
 
   const [isDesktop] = useMediaQuery('(min-width: 960px)');
 
+  const handleOnCopy = () => {
+    const search = new URLSearchParams({
+      style: swag?.productStyle?.id.toString() ?? '',
+      address: swag?.nft?.asset_contract.address ?? '',
+      token: swag?.nft?.token_id ?? '',
+      product: swag?.product?.id.toString() ?? ''
+    });
+    setUrl(`${location.origin}/preview?${search.toString()}`);
+  };
+
   React.useEffect(() => {
-    setUrl(location.href);
-  }, [router.query]);
+    if (url) {
+      onCopy();
+    }
+  }, [url]);
 
   return (
     <>
@@ -34,7 +48,7 @@ export const BuyButton = () => {
           <ModalCloseButton />
           <ModalBody my="4">
             <Center flexDirection="column">
-              <Button colorScheme="yellow" onClick={onCopy}>
+              <Button colorScheme="yellow" onClick={handleOnCopy}>
                 {hasCopied ? '已复制' : '复制链接'}
               </Button>
               <Button mt="2" colorScheme="yellow">

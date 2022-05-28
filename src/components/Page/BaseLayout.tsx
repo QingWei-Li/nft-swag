@@ -34,7 +34,7 @@ const wagmiClient = createClient({
 
 export const BaseLayout: React.FC<any> = ({ children }) => {
   const { colorMode } = useColorMode();
-  console.log(colorMode);
+
   return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider
